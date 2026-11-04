@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibek Jewelries - Exclusive Gold & Traditional Jewelry</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FFF9E5',
+                            300: '#F5E08C',
+                            400: '#E6C653',
+                            500: '#D4AF37', // Primary Gold
+                            600: '#AA820A',
+                            700: '#856404'
+                        },
+                        darkbg: '#0F0F0F',
+                        cardbg: '#181818',
+                        accentbg: '#222222'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        bengali: ['Hind Siliguri', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>    
+    <style>
+        body {
+            font-family: 'Hind Siliguri', 'Cinzel', sans-serif;
+            background-color: #0F0F0F;
+            color: #F3F4F6;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF9E5 0%, #D4AF37 50%, #AA820A 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .gold-border-glow:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-darkbg/90 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center bg-gold-500/10">
+                        <i class="fa-solid fa-gem text-gold-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-cinzel text-xl sm:text-2xl font-bold tracking-widest gold-gradient-text">BIBEK</h1>
+                        <p class="text-[10px] tracking-[0.2em] text-gold-300 font-cinzel -mt-1 uppercase">Jewelries</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#hero" class="text-gray-300 hover:text-gold-400 transition-colors">হোম</a>
+                    <a href="#gold-rates" class="text-gray-300 hover:text-gold-400 transition-colors">আজকের স্বর্ণের দাম</a>
+                    <a href="#collections" class="text-gray-300 hover:text-gold-400 transition-colors">কালেকশন</a>
+                    <a href="#custom-order" class="text-gray-300 hover:text-gold-400 transition-colors">অর্ডার / ইনকোয়ারি</a>
+                    <a href="#contact" class="text-gray-300 hover:text-gold-400 transition-colors">যোগাযোগ</a>
+                </nav>
+
+                <!-- Call Action / WhatsApp -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <a href="https://wa.me/8801700000000?text=Hello%20Bibek%20Jewelries,%20I%20have%20an%20inquiry." target="_blank" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-full text-sm font-medium transition-all transform hover:scale-105 shadow-lg shadow-emerald-900/20">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>হোয়াটসঅ্যাপ মেসেজ</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gold-400 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardbg border-b border-gold-500/20 px-4 pt-2 pb-4 space-y-2">
+            <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-gold-400 hover:bg-accentbg">হোম</a>
+            <a href="#gold-rates" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-gold-400 hover:bg-accentbg">আজকের স্বর্ণের দাম</a>
+            <a href="#collections" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-gold-400 hover:bg-accentbg">কালেকশন</a>
+            <a href="#custom-order" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-gold-400 hover:bg-accentbg">অর্ডার / ইনকোয়ারি</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-gold-400 hover:bg-accentbg">যোগাযোগ</a>
+            <a href="https://wa.me/8801700000000?text=Hello%20Bibek%20Jewelries" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600 text-white py-2 rounded-lg text-sm font-medium mt-2">
+                <i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপে ইনকোয়ারি করুন
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative py-20 lg:py-32 overflow-hidden border-b border-gold-500/10">
+        <div class="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <span class="inline-block px-4 py-1.5 rounded-full border border-gold-500/40 text-gold-400 text-xs tracking-widest font-semibold uppercase mb-6 bg-gold-500/5">
+                        স্বর্ণ ও সনাতনী গহনার নির্ভরযোগ্য প্রতিষ্ঠান
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                        আভিজাত্য ও ঐতিহ্যের <br class="hidden sm:block"/> 
+                        <span class="gold-gradient-text">অনবদ্য মিলনমেলা</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 mb-8 font-light">
+                        বিবেক জুয়েলার্স-এ পাচ্ছেন ১০০% নিখাদ ২২ ক্যারেট হলমার্কযুক্ত স্বর্ণের হার, চেইন, রিং ও বালা। আমাদের কারিগরদের হাতে তৈরি ঐতিহ্যবাহী নকশা আপনার সৌন্দর্যকে করবে আরও আকর্ষনীয়।
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#collections" class="gold-gradient-bg text-black font-semibold px-8 py-3.5 rounded-full shadow-lg hover:shadow-gold-500/20 hover:scale-105 transition-all text-center">
+                            কালেকশন দেখুন <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#custom-order" class="border border-gold-500/50 hover:border-gold-400 text-gold-300 font-medium px-8 py-3.5 rounded-full transition-all text-center bg-gold-500/5 hover:bg-gold-500/10">
+                            কাস্টম অর্ডার করুন
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-gold-500/20 absolute -z-10 animate-pulse bg-gold-500/5"></div>
+                    <div class="p-4 rounded-2xl bg-cardbg/80 border border-gold-500/30 backdrop-blur-sm shadow-2xl max-w-md w-full">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" 
+                             alt="Luxury Jewelry Collection" 
+                             class="rounded-xl w-full h-80 object-cover border border-gold-500/20 shadow-md"
+                             onerror="this.src='https://placehold.co/600x600/181818/D4AF37?text=Bibek+Jewelries'"
+                        />
+                        <div class="mt-4 p-3 bg-darkbg rounded-lg border border-gold-500/20 flex justify-between items-center">
+                            <div>
+                                <p class="text-xs text-gray-400">বিশেষ অফার</p>
+                                <p class="text-sm font-semibold text-gold-400">মজুুরি মূল্যে বিশেষ ছাড়!</p>
+                            </div>
+                            <a href="#collections" class="text-xs text-gold-300 border border-gold-500/30 px-3 py-1.5 rounded hover:bg-gold-500 hover:text-black transition">বিস্তারিত</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Gold Rates Widget -->
+    <section id="gold-rates" class="py-12 bg-cardbg/50 border-b border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 bg-accentbg/80 p-6 sm:p-8 rounded-2xl border border-gold-500/30 shadow-xl">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full gold-gradient-bg flex items-center justify-center text-black font-bold text-xl">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white font-cinzel">আজকের স্বর্ণের বাজার দর</h2>
+                        <p class="text-xs text-gold-400" id="current-date">সর্বশেষ আপডেট: আজ</p>
+                    </div>
+                </div>
+
+                <!-- Rates Display Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full md:w-auto">
+                    <div class="bg-darkbg p-3.5 rounded-xl border border-gold-500/20 text-center">
+                        <span class="text-xs text-gray-400 block mb-1">২২ ক্যারেট (প্রতি ভরি)</span>
+                        <span class="text-lg font-bold text-gold-400" id="rate-22k">৳ ১,৪২,৫০০</span>
+                    </div>
+                    <div class="bg-darkbg p-3.5 rounded-xl border border-gold-500/20 text-center">
+                        <span class="text-xs text-gray-400 block mb-1">২১ ক্যারেট (প্রতি ভরি)</span>
+                        <span class="text-lg font-bold text-gold-400" id="rate-21k">৳ ১,৩৬,০০০</span>
+                    </div>
+                    <div class="bg-darkbg p-3.5 rounded-xl border border-gold-500/20 text-center col-span-2 sm:col-span-1">
+                        <span class="text-xs text-gray-400 block mb-1">১৮ ক্যারেট (প্রতি ভরি)</span>
+                        <span class="text-lg font-bold text-gold-400" id="rate-18k">৳ ১,১৬,৫০০</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Gallery -->
+    <section id="collections" class="py-20 border-b border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold font-cinzel gold-gradient-text mb-3">আমাদের বিশেষ কালেকশন</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">আধুনিক ও সনাতনী কারুকাজের অনন্য গহনার সম্ভার থেকে আপনার পছন্দেরটি বেছে নিন</p>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mt-8" id="category-filters">
+                    <button class="filter-btn active bg-gold-500 text-black px-5 py-2 rounded-full text-sm font-semibold transition" data-category="all">সব গহনা</button>
+                    <button class="filter-btn bg-darkbg border border-gold-500/30 text-gray-300 hover:border-gold-400 px-5 py-2 rounded-full text-sm font-semibold transition" data-category="necklace">সোনার নেকলেস</button>
+                    <button class="filter-btn bg-darkbg border border-gold-500/30 text-gray-300 hover:border-gold-400 px-5 py-2 rounded-full text-sm font-semibold transition" data-category="chain">চেইন</button>
+                    <button class="filter-btn bg-darkbg border border-gold-500/30 text-gray-300 hover:border-gold-400 px-5 py-2 rounded-full text-sm font-semibold transition" data-category="ring">আংটি (Ring)</button>
+                    <button class="filter-btn bg-darkbg border border-gold-500/30 text-gray-300 hover:border-gold-400 px-5 py-2 rounded-full text-sm font-semibold transition" data-category="bangle">বালা ও চুড়ি</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card bg-cardbg rounded-2xl border border-gold-500/20 overflow-hidden gold-border-glow transition-all duration-300" data-category="necklace">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Royal Gold Necklace" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/400x400/181818/D4AF37?text=Gold+Necklace'">
+                        <span class="absolute top-3 right-3 bg-gold-500 text-black text-xs font-bold px-2.5 py-1 rounded-full">২২ ক্যারেট</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white mb-1">রয়েল ব্রাইডাল সেট</h3>
+                        <p class="text-xs text-gray-400 mb-3">ওজন: ১.৫ ভরি (আনুমানিক)</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gold-500/10">
+                            <span class="text-gold-400 font-bold text-sm">দাম জানতে ইনকোয়ারি করুন</span>
+                            <button onclick="orderViaWhatsApp('রয়েল ব্রাইডাল সেট')" class="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg text-sm transition" title="WhatsApp Order">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card bg-cardbg rounded-2xl border border-gold-500/20 overflow-hidden gold-border-glow transition-all duration-300" data-category="chain">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611591475155-4282fc289e94?auto=format&fit=crop&w=600&q=80" alt="Gold Chain" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/400x400/181818/D4AF37?text=Gold+Chain'">
+                        <span class="absolute top-3 right-3 bg-gold-500 text-black text-xs font-bold px-2.5 py-1 rounded-full">২১ ক্যারেট</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white mb-1">ডিজাইনার রোপ চেইন</h3>
+                        <p class="text-xs text-gray-400 mb-3">ওজন: ৮ আনা</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gold-500/10">
+                            <span class="text-gold-400 font-bold text-sm">দাম জানতে ইনকোয়ারি করুন</span>
+                            <button onclick="orderViaWhatsApp('ডিজাইনার রোপ চেইন')" class="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg text-sm transition" title="WhatsApp Order">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card bg-cardbg rounded-2xl border border-gold-500/20 overflow-hidden gold-border-glow transition-all duration-300" data-category="ring">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" alt="Gold Ring" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/400x400/181818/D4AF37?text=Gold+Ring'">
+                        <span class="absolute top-3 right-3 bg-gold-500 text-black text-xs font-bold px-2.5 py-1 rounded-full">২২ ক্যারেট</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white mb-1">ঐতিহ্যবাহী পাথর বসানো আংটি</h3>
+                        <p class="text-xs text-gray-400 mb-3">ওজন: ৪ আনা</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gold-500/10">
+                            <span class="text-gold-400 font-bold text-sm">দাম জানতে ইনকোয়ারি করুন</span>
+                            <button onclick="orderViaWhatsApp('ঐতিহ্যবাহী পাথর বসানো আংটি')" class="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg text-sm transition" title="WhatsApp Order">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card bg-cardbg rounded-2xl border border-gold-500/20 overflow-hidden gold-border-glow transition-all duration-300" data-category="bangle">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611591475155-4282fc289e94?auto=format&fit=crop&w=600&q=80" alt="Gold Bangle" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/400x400/181818/D4AF37?text=Gold+Bangle'">
+                        <span class="absolute top-3 right-3 bg-gold-500 text-black text-xs font-bold px-2.5 py-1 rounded-full">২২ ক্যারেট</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-white mb-1">সনাতনী ময়ূর নকশা বালা</h3>
+                        <p class="text-xs text-gray-400 mb-3">ওজন: ১ ভরি</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-gold-500/10">
+                            <span class="text-gold-400 font-bold text-sm">দাম জানতে ইনকোয়ারি করুন</span>
+                            <button onclick="orderViaWhatsApp('সনাতনী ময়ূর নকশা বালা')" class="bg-emerald-600 hover:bg-emerald-500 text-white p-2 rounded-lg text-sm transition" title="WhatsApp Order">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Order & Inquiry Form -->
+    <section id="custom-order" class="py-20 bg-cardbg/30 border-b border-gold-500/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-cardbg border border-gold-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-gold-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold font-cinzel gold-gradient-text">কাস্টম গহনার অর্ডার / ইনকোয়ারি</h2>
+                    <p class="text-gray-400 text-sm mt-2">আপনার পছন্দের ডিজাইন ও ওজনে গহনা বানাতে নিচের ফর্মটি পূরণ করুন</p>
+                </div>
+
+                <form id="inquiryForm" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">আপনার নাম *</label>
+                            <input type="text" id="cust-name" required placeholder="উদাহরণ: সুজন কুমার" class="w-full bg-darkbg border border-gold-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">মোবাইল নম্বর *</label>
+                            <input type="tel" id="cust-phone" required placeholder="017XXXXXXXX" class="w-full bg-darkbg border border-gold-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">গহনার ধরণ</label>
+                            <select id="cust-item" class="w-full bg-darkbg border border-gold-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 text-sm">
+                                <option value="হার / নেকলেস">হার / নেকলেস</option>
+                                <option value="সোনার চেইন">সোনার চেইন</option>
+                                <option value="আংটি (Ring)">আংটি (Ring)</option>
+                                <option value="বালা / চুড়ি">বালা / চুড়ি</option>
+                                <option value="অন্যান্য">অন্যান্য</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">আনুমানিক ওজন (ভরি/আনা)</label>
+                            <input type="text" id="cust-weight" placeholder="যেমন: ১ ভরি ২ আনা" class="w-full bg-darkbg border border-gold-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">আপনার বিবরণ বা বিশেষ নির্দেশনা</label>
+                        <textarea id="cust-details" rows="4" placeholder="ডিজাইন সম্পর্কিত যেকোনো তথ্য লিখুন..." class="w-full bg-darkbg border border-gold-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full gold-gradient-bg text-black font-bold py-4 rounded-xl shadow-lg hover:brightness-110 transition text-base">
+                        হোয়াটসঅ্যাপের মাধ্যমে বার্তা পাঠান <i class="fa-brands fa-whatsapp ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Details Section -->
+    <section id="contact" class="py-20 border-b border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Info Cards -->
+                <div>
+                    <h2 class="text-3xl font-bold font-cinzel gold-gradient-text mb-6">আমাদের জুয়েলার্সে স্বাগতম</h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        বিবেক জুয়েলার্স দীর্ঘ দিন ধরে বিশ্বস্ততা ও সততার সাথে গ্রাহকদের উন্নতমানের সোনা ও ঐতিহ্যবাহী গহনা পরিবেশন করে আসছে। আমাদের শোরুমে এসে সরাসরি দেখে পছন্দসই গহনা ক্রয় করুন।
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl border border-gold-500/30 bg-gold-500/10 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-lg">দোকানের ঠিকানা</h3>
+                                <p class="text-gray-400 text-sm mt-1">বাড়ী মার্কেট, ডালিয়া রোড, জলঢাকা, নীলফামারী</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl border border-gold-500/30 bg-gold-500/10 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-lg">মোবাইল ও হোয়াটসঅ্যাপ</h3>
+                                <p class="text-gray-400 text-sm mt-1">+৮৮০ ১৭০০-০০০০০০ (যেকোনো ইনকোয়ারির জন্য)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl border border-gold-500/30 bg-gold-500/10 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-lg">খোলা থাকার সময়</h3>
+                                <p class="text-gray-400 text-sm mt-1">প্রতিদিন সকাল ১০.০০ টা - রাত ৮.০০ টা (শুক্রবার বন্ধ/খোলা সূচি)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Placeholder / Responsive Frame -->
+                <div class="bg-cardbg p-4 rounded-3xl border border-gold-500/20 shadow-2xl">
+                    <div class="w-full h-80 rounded-2xl overflow-hidden bg-darkbg relative flex items-center justify-center border border-gold-500/10">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3587.234!2d88.9242!3d26.0025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbooDAnMDkuMCJOIDg4wrA1NScyNy4xIkU!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkbg text-gray-400 py-8 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-gem text-gold-500"></i>
+                <span class="font-cinzel text-white font-bold">BIBEK JEWELRIES</span>
+            </div>
+            <p class="text-xs text-center">© <span id="year"></span> বিবেক জুয়েলার্স (জলঢাকা, নীলফামারী)। সর্বস্বত্ব সংরক্ষিত।</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-gold-400 transition"><i class="fa-brands fa-facebook text-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gold-400 transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="https://wa.me/8801700000000" target="_blank" class="text-gray-400 hover:text-emerald-400 transition"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Format and set current date in Bengali
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('current-date').textContent = 'সর্বশেষ আপডেট: ' + new Date().toLocaleDateString('bn-BD', options);
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter Products
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-gold-500', 'text-black');
+                    b.classList.add('bg-darkbg', 'text-gray-300');
+                });
+                btn.classList.remove('bg-darkbg', 'text-gray-300');
+                btn.classList.add('bg-gold-500', 'text-black');
+
+                const category = btn.getAttribute('data-category');
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Order Product directly via WhatsApp
+        function orderViaWhatsApp(productName) {
+            const phone = "8801700000000"; // Replace with store's actual WhatsApp phone number
+            const message = `হ্যালো বিবেক জুয়েলার্স, আমি আপনার ওয়েবসাইটে "${productName}" গহনাটি দেখেছি এবং এটার দাম ও বিস্তারিত জানতে চাই।`;
+            const encodedMsg = encodeURIComponent(message);
+            window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
+        }
+
+        // Handle Custom Inquiry Form Submission
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('cust-name').value;
+            const phoneNum = document.getElementById('cust-phone').value;
+            const item = document.getElementById('cust-item').value;
+            const weight = document.getElementById('cust-weight').value || 'উল্লেখ নেই';
+            const details = document.getElementById('cust-details').value || 'নেই';
+
+            const storePhone = "8801700000000"; // Replace with store's WhatsApp number
+
+            const message = `*নতুন কাস্টম অর্ডার ইনকোয়ারি*\n\n` +
+                            `*নাম:* ${name}\n` +
+                            `*ফোন:* ${phoneNum}\n` +
+                            `*গহনার নাম:* ${item}\n` +
+                            `*ওজন:* ${weight}\n` +
+                            `*বিবরণ:* ${details}`;
+
+            const encodedMsg = encodeURIComponent(message);
+            window.open(`https://wa.me/${storePhone}?text=${encodedMsg}`, '_blank');
+        });
+    </script>
+</body>
+</html>
